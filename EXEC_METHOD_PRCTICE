@@ -1,0 +1,40 @@
+<html>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app">
+        <h1>{{message}}   {{username}} </h1>
+        <h2>This is my first web page- {{subtitle}} </h2>
+       <p>This is Username: <input v-model="username"> </p> 
+       <p>the price of pen : <input type=text v-model="price"> </p> 
+       <p>the quantity of pen : <input type=text v-model="quantity"> </p>
+        <p>Method總金額共 {{ subtotal() }} 元</p>
+        <p>Computed總金額共 {{ subtotalA }} 元</p>
+    </div>
+</body>
+<script>
+const vm = new Vue({
+    data: {
+      message : "Hello!",
+      subtitle : "method & computed practice",
+      username : '',
+      price: 100,
+      quantity : 20 ,
+      total:0
+    } ,
+    methods: {
+    subtotal: function() {      
+    { this.total = Number.parseFloat(Number(this.price)) * Number.parseFloat(Number(this.quantity)) }
+      return this.total ;
+    }},
+    computed:{
+     subtotalA: function() {
+     return  this.price * this.quantity ;},
+    }
+    
+  }).$mount("#app");
+</script>
+</html>
