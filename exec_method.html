@@ -1,0 +1,35 @@
+<html>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app">
+        <h1>{{message}}   {{username}} </h1>
+        <h2>This is my first web page</h2>
+        This is Username: <input v-model="username">  </input>
+        <p>單價: {{ price }}</p> 
+        <p> 數量: {{ quantity }} </p>
+        <p>總金額共 {{ subtotal() }} 元</p>
+    </div>
+</body>
+<script>
+ const vm = new Vue({
+    data: {
+      message : "Hello World!",
+      username : '',
+      price: 100,
+      quantity : 20 ,
+      total:0
+    } ,
+    methods: {
+    subtotal: function() {
+     { this.total = this.price * this.quantity }
+      return this.total ;
+    }
+  }
+  }).$mount("#app");
+</script>
+</html>
+
