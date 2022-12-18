@@ -13,9 +13,9 @@
   <div>
     <h4> 1.radio ***</h4>
     <p>性別:
-    <input type="radio" id="one" value="1" v-model="picked">
+    <input type="radio" id="one" value="man" v-model="picked">
     <label for="one">男</label>
-    <input type="radio" id="two" value="2" v-model="picked">
+    <input type="radio" id="two" value="female" v-model="picked">
     <label for="two">女</label></p>
   </div>
   <span>Picked: {{ picked }}</span>
@@ -24,13 +24,13 @@
    <br>
    <h4> 2.checkBox ***</h4>
    <p>選修學科: </p>
-  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+  <input type="checkbox" id="jack" value="Eng" v-model="checkedNames">
   <label for="jack">English</label>
-  <input type="checkbox" id="john" value="John" v-model="checkedNames">
+  <input type="checkbox" id="john" value="Chi" v-model="checkedNames">
   <label for="john">Chinese</label>
-  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+  <input type="checkbox" id="mike" value="Math" v-model="checkedNames">
   <label for="mike">Mathematics</label>
-  <input type="checkbox" id="mary" value="Mary" v-model="checkedNames">
+  <input type="checkbox" id="mary" value="Geo" v-model="checkedNames">
   <label for="mary">Geography</label>
   <br>
   <p>Checked names: {{ checkedNames }}</p>
