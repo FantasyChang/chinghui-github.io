@@ -14,8 +14,7 @@
         <p>Method總金額共 {{ subtotal() }} 元</p>
         <p>Computed總金額共 {{ subtotalA }} 元</p>
     </div>
-</body>
-<script>
+    <script>
 const vm = new Vue({
     data: {
       message : "Hello World!",
@@ -37,4 +36,6 @@ const vm = new Vue({
     
   }).$mount("#app");
 </script>
+</body>
+
 </html>
