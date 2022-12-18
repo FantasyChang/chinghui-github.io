@@ -1,0 +1,41 @@
+<html>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app">
+       <h1> 台幣換算日幣及美元計算器 </h1>
+       <p>1 日幣 = 0.278 台幣     1美元 =  31.1 台幣</p>
+       <div>台幣 <input type="text" v-model="twd"></div>
+       <div>日幣 <input type="text" v-model="jpy"></div>
+       <div>美元 <input type="text" v-model="usd"></div>
+  </div>
+</body>
+<script>
+const vm = new Vue({
+    data: {
+       twd : 0.278 
+    } ,
+    computed: {
+    jpy: {
+      get () {
+        return Number.parseFloat(Number(this.twd) / 0.278).toFixed(3);
+      },
+      set (val) {
+        this.twd = Number.parseFloat(Number(val) * 0.278).toFixed(3);
+      }
+    },
+    usd: {
+      get () {
+        return Number.parseFloat(Number(this.twd) / 31.1 ).toFixed(3);
+      },
+      set (val) {
+        this.twd = Number.parseFloat(Number(val) * 31.1).toFixed(3);
+      }
+    } 
+  }
+  }).$mount("#app");
+  </script>
+</html>
