@@ -12,8 +12,7 @@
        <div>日幣 <input type="text" v-model="jpy"></div>
        <div>美元 <input type="text" v-model="usd"></div>
   </div>
-</body>
-<script>
+  <script>
 const vm = new Vue({
     data: {
        twd : 0.278 
@@ -38,4 +37,6 @@ const vm = new Vue({
   }
   }).$mount("#app");
   </script>
+</body>
+
 </html>
