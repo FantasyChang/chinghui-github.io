@@ -58,21 +58,11 @@ const vm = new Vue({
     data: {
       message : "Hello!",
       subtitle : "radio/checkbox/select practic",
-      username : '',
-      price: 100,
-      quantity : 20 ,
-      total:0,
       picked : '',
       checkedNames: [],
       isChecked : false,
       selected:''
-    } ,
-    methods: {
-    subtotal: function() {
-     { this.total = this.price * this.quantity }
-      return this.total ;
-    }
-  }
+    } 
   }).$mount("#app");  
 </script>  
   
