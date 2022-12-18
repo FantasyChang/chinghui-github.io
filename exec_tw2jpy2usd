@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <div id="app">
        <h1> 台幣換算日幣及美元計算器 </h1>
-       <p>1 日幣 = 0.278 台幣     1美元 =  31.1 台幣</p>
+       <p>1 日幣 = 0.278 台幣  ,   1美元 =  31.1 台幣</p>
        <div>台幣 <input type="text" v-model="twd"></div>
        <div>日幣 <input type="text" v-model="jpy"></div>
        <div>美元 <input type="text" v-model="usd"></div>
