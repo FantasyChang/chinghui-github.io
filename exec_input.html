@@ -8,18 +8,15 @@
   <div id="app">
         <h1>{{message}}   {{username}} </h1>
         <h2>This is my first web page---{{subtitle}}</h2>
-      <input v-model="name">
-      <p>My Name is {{name}} </p>
+        <p>My Name is {{name}} <input v-model="name"> </p>
   <!-- 要注意下面兩組 input 對應的都是 v-model="picked"  -->
   <div>
     <h4> 1.radio ***</h4>
-    <p>性別:</p>
+    <p>性別:
     <input type="radio" id="one" value="1" v-model="picked">
     <label for="one">男</label>
-  </div>
-  <div>
     <input type="radio" id="two" value="2" v-model="picked">
-    <label for="two">女</label>
+    <label for="two">女</label></p>
   </div>
   <span>Picked: {{ picked }}</span>
   <div>  
