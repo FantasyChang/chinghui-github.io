@@ -1,0 +1,62 @@
+<html>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <h1> v-on event  prctice ...</h1>
+
+<div id="app">
+  <h1>
+      顯示輸入任意文字結果
+  </h1>
+   <div class="messages">
+    <div v-for="m in messages">{{ m }}</div>
+  </div>
+
+  <input type="text" 
+    placeholder="輸入任意文字後按下 enter 鍵"
+    v-model.trim="msg" 
+    @keydown.enter="addToMessages">
+</div>
+ <script>
+ const vm = Vue.createApp({
+  data: () => {
+    return {
+      msg: '',
+      messages: []
+    }
+  },
+  methods: {
+    addToMessages() {
+      this.messages.push(this.msg);
+      this.msg = '';
+    }
+  }
+}).mount('#app');
+ </script>
+ 
+ <style>
+ #app {
+  display: block;  
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.messages {
+  padding: 6px 10px;
+  width: 95%;
+  height: 100px;
+  margin-bottom: 1em;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+}
+
+input[type="text"] {
+  padding: 3px 5px;
+  width: 95%;
+}
+ </style>
+ </body>
+ </html>
