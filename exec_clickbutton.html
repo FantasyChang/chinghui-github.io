@@ -1,0 +1,114 @@
+<html>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <h1> v-on , button prctice ...</h1>
+  <div id="app">
+   <p>Count: {{ count }}</p>
+  <button @click="plus">Click Me Plus</button>
+  <br><br>
+  <button v-on:click="minus">Minus </button>
+  <br><br>
+  
+    <div class="p" v-show="msg.length > 0">
+    <div v-for="m in msg">{{ m }}</div>
+   </div> 
+  <div class="wrap">
+    click without stopPropagation
+    <div class="outer" @click="alert('Outer')">
+      <span>Outer</span>
+      <div class="inner" @click="alert('Inner')">Inner</div>
+    </div>
+  </div>
+   <div class="wrap">
+    click with stopPropagation
+    <div class="outer" @click="alert('Outer')">
+      <span>Outer</span>
+      <div class="inner" @click.stop="alert('Inner')">Inner</div>
+    </div>
+  </div>  
+</div>
+<script>
+  const vm = new Vue({
+    data: {
+      msg : [],
+      count: 0,
+    } ,
+  methods: {
+    plus: function() {
+      this.count++;
+    },
+    minus: function(){
+      if(this.count>0)  this.count--;
+    },
+    alert(val){
+			this.msg.push(val);
+      window.setTimeout(() => {
+        this.msg = [];
+      }, 1000);
+    
+    }
+  }
+  </script>
+  <css>
+    body {
+  padding: 1rem;
+}
+
+.p {
+  margin-bottom: 1rem;
+  padding: 10px;
+  background-color: yellow;
+  div {
+  	margin-bottom: 5px;
+  }
+}
+
+.app {
+  overflow: hidden;
+}
+
+.wrap {
+  float: left;
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+}
+
+.outer {
+  cursor: pointer;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  padding: 25px;
+  background-color: #ccc;
+  text-align: center;
+  margin-top: 1rem;
+  &:hover{
+    background-color: darken(#ccc, 10%);
+  }
+}
+
+.inner {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -45px;
+  margin-top: -55px;
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  line-height: 70px;
+  background-color: #f00;
+  color: #fff;
+  &:hover{
+    background-color: darken(#f00, 10%);
+  }
+}
+  </css>
+    
+</body>
+</html>
