@@ -8,7 +8,7 @@
     <h1> v-on , button prctice ...</h1>
   <div id="app">
    <p>Count: {{ count }}</p>
-  <button @click="plus">Click Me Plus</button>
+   <button @click="plus">Click Me Plus</button>
   <br><br>
   <button v-on:click="minus">Minus </button>
   <br><br>
@@ -51,7 +51,9 @@
       }, 1000);
     
     }
-  }
+  } 
+}).$mount("#app");  
+	  
   </script>
   <style>
     body {
