@@ -21,13 +21,11 @@
     @keydown.enter="addToMessages">
 </div>
  <script>
- const vm = Vue.createApp({
-  data: () => {
-    return {
+const vm = new Vue({
+    data: {
       msg: '',
       messages: []
-    }
-  },
+    },
   methods: {
     addToMessages() {
       this.messages.push(this.msg);
@@ -35,10 +33,11 @@
     }
   }
 }).$mount("#app");
+     
  </script>
  
  <style>
- #app {
+#app {
   display: block;  
   width: 100%;
   padding-top: 1rem;
@@ -49,6 +48,7 @@
   width: 95%;
   height: 100px;
   margin-bottom: 1em;
+  background-color: yellow;
   overflow-y: scroll;
   border: 1px solid #ccc;
 }
