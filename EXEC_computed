@@ -8,7 +8,7 @@
   <div id="app">
         <h1>{{message}}   {{username}} </h1>
         <h2>This is my first web page- {{subtitle}} </h2>
-        This is Username: <input v-model="username">  </input>
+        This is Username: <input v-model="username"> 
         <p>單價: {{ price }}</p> 
         <p> 數量: {{ quantity }} </p>
         <p>Method總金額共 {{ subtotal() }} 元</p>
