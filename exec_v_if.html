@@ -1,0 +1,54 @@
+<div id="app">
+  Choose One:
+  <label>
+    <input type="radio" value="username" v-model="loginType">
+    Username
+  </label>
+
+  <label>
+    <input type="radio" value="email" v-model="loginType">
+    Email
+  </label>
+
+  <hr>
+
+  <template v-if="loginType === 'username'">
+    <label>Username</label>
+    <input placeholder="Enter your username" key="username">
+  </template>
+
+  <template v-else>
+    <label>Email</label>
+    <input placeholder="Enter your email address" key="email">
+  </template>
+</div>
+<script>
+  const vm = new Vue({
+  data: () => {
+    return {
+      loginType: 'username'
+    }
+  },
+}).$mount('#app');
+</script>
+<style>
+  #app {
+  display: block;  
+  padding: 1rem;
+}
+
+label {
+  margin-right: 1rem;
+}
+
+input:not([type]) {
+  margin-left: 1rem;
+  min-width: 300px;
+  width: 50%;
+  height: 1rem;
+  line-height: 1rem;
+  padding: 2px 3px;
+}
+</style>
+</body>
+</html>
