@@ -20,7 +20,7 @@
   <br> <br>
   <div>
   <ul>
-    <li v-for="val in book">{{ val }}</li>
+   <li v-for="(val,key,index) in book">{{index}}/{{key}}/{{ val }}</li>
   </ul>
  </div>
   
