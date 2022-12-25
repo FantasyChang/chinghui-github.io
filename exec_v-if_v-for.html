@@ -1,0 +1,78 @@
+<html>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <h1> v-if , v-else-if ,v-else & v-for  practice</h1>
+
+<div id="app">
+  <h4>count: {{ count }}</h4>
+  <button @click="count++">Plus</button>
+  <button @click="count = 0">Reset</button>
+
+  <div class="wrap">
+    <div v-if="count === 0" style="background-color: #f00;">Block A</div>
+    <div v-else-if="count < 5" style="background-color: green">Block B</div>
+    <div v-else style="background-color: yellow;">Block C</div>
+  </div>
+  <br> <br>
+  <div>
+  <ul>
+    <li v-for="val in book">{{ val }}</li>
+  </ul>
+ </div>
+  
+  
+  
+</div>
+
+<script>
+ const vm = new Vue({
+    data: {
+      count: 0,
+       book: {
+        title: '08js',
+        author:  'Kuro',
+        publishedAt: '2019/09'
+      }
+    } 
+}).$mount("#app"); 
+
+</script>
+<style>
+.app {
+  display: block;  
+  padding: 1rem;
+}
+
+h4 {
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-right: 1em;
+}
+
+.wrap {
+  display: block;
+  overflow: hidden;
+  margin-top: 2rem;
+
+  div {
+    float: left;
+    margin-right: 2rem;
+    display: block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+}
+
+</style>
+</body>
+</html>
