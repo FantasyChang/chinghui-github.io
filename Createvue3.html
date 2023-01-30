@@ -14,5 +14,17 @@
         <p>總金額共 {{ price * quantity }} 元</p>
     </div>
 </body>
-
+<script>
+ const vm = Vue.createApp({
+  data() {
+    return {
+      message: 'Hello Vue!' ,
+      subtitle:"new Vue excercise",
+      username : '',
+      price: 100,
+      quantity : 20 
+    }
+  }
+}).mount('#app');
+</script>
  </html>
