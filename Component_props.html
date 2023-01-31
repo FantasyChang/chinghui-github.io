@@ -1,0 +1,42 @@
+<html>
+ <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+  <div id="app"> 
+  <!-- 這是外層元件的 msg -->
+  <h3>{{ msg }}</h3>
+
+  <!-- 這裡的 v-bind:parent-msg 可以簡寫為 :parent-msg -->
+  <my-component v-bind:parent-msg="msg"></my-component>
+</div>
+
+<script>
+const app = Vue.createApp({
+  data() {
+    return {
+      msg: '這是外層元件的 msg'
+    }
+  }
+});
+
+app.component('my-component', {
+  template: `
+    <div class="component">
+      <div> 從 props 來的 parentMsg ==> {{ parentMsg }} </div>
+      <div> 自己的 msg ==> {{ msg }} </div>
+    </div>`,
+  props: ["parentMsg"],
+  data: () => {
+    return {
+      msg: '這是子元件的 msg'
+    }
+  }
+});
+
+app.mount('#app');
+</script>
+</body>
+</html>
